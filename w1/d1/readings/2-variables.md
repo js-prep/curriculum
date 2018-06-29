@@ -12,7 +12,7 @@
 
 ## Assigning Value to Variables
 
-When you assign a variable in JS, you use the `=` symbol. The hardest thing to get used to is that this `=` symbol is termed the **"assignment operator"**, not the "equal" sign.
+When you assign a variable in JS, you use the `=` symbol. The hardest thing to get used to is that this `=` symbol is termed the **"assignment operator"**, not the **"equal"** sign.
 
 Here's an example of how we can use the assignment operator to create a variable within JS.
 
