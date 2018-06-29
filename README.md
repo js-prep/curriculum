@@ -30,6 +30,6 @@ Atom will be our go to code editor for this program. If you have a strong prefer
 
 1. [Install Atom](https://atom.io/)
 2. Open Atom
-3. Install Atom Shell Commands:
+3. Install Atom Shell Commands: `Atom -> Install Shell Commands`
 
 ![Installing Atom Shell Commands](https://github.com/js-prep/curriculum/blob/master/assets/installing-atom-shell-commands.png)
