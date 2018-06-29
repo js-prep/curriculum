@@ -33,6 +33,7 @@ When we put this all together, it starts to make a lot more sense: "I want to cr
 
 ```javascript
 fullName
+// => "Jeremy Cho"
 ```
 
 ## Reassigning Variables
