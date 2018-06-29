@@ -46,7 +46,7 @@ fullName = "Grant Kang"
 // => "Grant Kang"
 ```
 
-Simply use the **assignment operator** in a similar fashion to reassign the value inside the variable. What happens when you *redeclare* a variable with the same name? You might think that Javascript might prevent us from trying to redeclare a variable by the same name... but it doesn't.
+Simply use the **assignment operator** in a similar fashion to reassign the value inside the variable. What happens when you *redeclare* a variable with the same name? It's plausible to think that Javascript prevents us from trying to redeclare a variable by the same name... but it doesn't.
 
 ```javascript
 var fullName = "Jeremy Cho"
@@ -71,10 +71,10 @@ var a = "500 Orangethorpe Ave."
 var pn = "808-419-2831"
 ```
 
-You can easily start to see that this gets extremely confusing, and though it may save us a few keyboard strokes... It's not worth it in the long run.
+You quickly start to see that this gets extremely confusing, and though it may save us a few keyboard strokes... It's not worth it in the long run.
 
 ## Types of Variables
 
 Up until now, we've only seen examples of assigning `string`s to the variables that we create but variables can be much more than that! As you'll see soon, anything in Javascript can be assigned to a variable.
 
-What this *"anything"* can be is something we'll cover fully throughout the week.
+What this ***"anything"*** can be is something we'll cover fully throughout the week.
