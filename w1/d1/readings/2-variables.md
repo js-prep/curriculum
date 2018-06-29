@@ -12,7 +12,7 @@
 
 ## Assigning Value to Variables
 
-When you assign a variable in JS, you use the `=` symbol. The hardest thing to get used to is that this `=` symbol is termed the "assignment operator", not the "equal" sign.
+When you assign a variable in JS, you use the `=` symbol. The hardest thing to get used to is that this `=` symbol is termed the **"assignment operator"**, not the "equal" sign.
 
 Here's an example of how we can use the assignment operator to create a variable within JS.
 
@@ -20,9 +20,9 @@ Here's an example of how we can use the assignment operator to create a variable
 var fullName = "Jeremy Cho"
 ```
 
-Woah, that's a lot of new syntax at once. Let's break this statement down into four pieces.
+Wowza! That's a lot of new syntax at once. Let's break this statement down into four pieces.
 
-1. `var`: `var` is a special keyword *reserved* by Javascript. It's our way of telling JS, *"Hey you,  we're defining a new variable!"*
+1. `var`: `var` is a special keyword ***reserved*** by Javascript. It's our way of telling JS, *"Hey you,  we're defining a new variable!"*
 2. `fullName`: The text following `var` is what we're declaring as the **name** of the variable. In our example, `fullName` is how we'll refer back to what data this variable is holding.
 3. `=`: The assignment operator! This is also a special syntax reserved by JS used for handling the assignment of a variable.
 4. `"Jeremy Cho"`: Javascript understands this to be of something called a `string`. We'll dive deep into these structures later in the course. Briefly, however, a `string` represents a set of characters.
