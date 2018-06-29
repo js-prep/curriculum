@@ -13,4 +13,4 @@ First things first. We ***highly*** recommend using a Mac for this program. Usin
 
 1. Clone the `curriculum` repository by navigating [here](https://github.com/js-prep/curriculum)
 
-[Copying the Repo URL](https://github.com/js-prep/curriculum/assets/copying-the-repo-url.png)
+![Copying the Repo URL](https://github.com/js-prep/curriculum/assets/copying-the-repo-url.png)
