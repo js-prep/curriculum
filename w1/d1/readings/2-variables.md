@@ -8,7 +8,7 @@
 
 ## What are Variables?
 
-**Variables** are used to store information so that they can be referenced and manipulated within JS. It also allows developers to label different pieces of data with descriptive names so that the functionality of the code can be more clearly understood by the reader as well as yourself. Essentially, variables are *containers* that hold some amount of information, and their sole purpose is to label and store this data in memory where they can be used throughout your program.
+**Variables** are used to store information so that they can be referenced and manipulated within JS. It also allows developers to label different pieces of data with descriptive names so that the functionality of the code can be more clearly understood by the reader as well as yourself. Essentially, variables are ***containers*** that hold some amount of information, and their sole purpose is to label and store this data in memory where they can be used throughout your program.
 
 ## Assigning Value to Variables
 
