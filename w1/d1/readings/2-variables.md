@@ -29,7 +29,7 @@ Wowza! That's a lot of new syntax at once. Let's break this statement down into 
 
 When we put this all together, it starts to make a lot more sense: "I want to create a new **variable** by the name of `fullName` and assign it a value of `"Jeremy Cho"`.
 
-...And to refer back to this variable we've created, we refer back to it using the variable name.
+Lastly, to refer back to this variable we've created, we refer back to it using the variable name.
 
 ```javascript
 fullName
