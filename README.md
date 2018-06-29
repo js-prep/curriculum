@@ -40,4 +40,4 @@ The Atom Runner is a package that exists on top of Atom that allows you to run J
 To install:
 
 1. `Atom -> Preferences`
-2. Inside Atom in the `Settings` tab, `Install` -> Search `atom runner` -> Click `Install` under `atom-runner`.
+2. Inside Atom in the `Settings` tab, `Install -> Search atom runner -> Click Install under atom-runner`.
