@@ -86,3 +86,7 @@ function outerFunction () {
   }
 }
 ```
+
+As you can see from the example above, our most inner function
+`innerrerFunction` has access to all the variables within `outerFunction`.
+However, we would not be able to access `doubleInside` from our `innerFunction`.
