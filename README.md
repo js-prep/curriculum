@@ -9,7 +9,7 @@
 
 There are a few things we need to take care of before you start the curriculum, but don't worry! We'll lay it out step by step, and make this process painless! Don't worry about understanding how to use any of the things we're installing, we'll slowly get to that as we need them.
 
-First things first. We ***highly*** recommend using a Mac for this program. Using a Mac will make your life multitudes easier, and our guides will be tailored for OSX.
+First things first. We ***highly*** recommend using a Mac for this program. Using a Mac will make your life multitudes easier, and our curriculum will be tailored for OSX.
 
 ## Cloning the Repo
 
