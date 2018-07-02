@@ -2,7 +2,7 @@
 
 - [Introduction to Control Flow](#introduction-to-control-flow)
 - [What is Control Flow?](#what-is-control-flow?)
-- [`if`, `else`, and `else if`](#`if`,-`else`,-and-`else-if`)
+- [`if`, `else`, and `else if`](#if-else-and-else-if)
 
 ## Introduction to Control Flow
 
