@@ -16,9 +16,9 @@ We've read about the basics of taking some information and storing them in varia
 
 `if` statements are fairly easy to understand, because we constantly exercise this logic in our daily lives.
 
-"If the water bottle is full, I'll drink the water."
+***"If the water bottle is full, I'll drink the water."***
 
-"If the weather is cold, I'll wear a sweater."
+***"If the weather is cold, I'll wear a sweater."***
 
 These two statements are in essence what we strive to accomplish with `if` statements. We give our code a condition - if that condition gets met, execute this line of code. If not, skip it. Here's what an `if` statement might look like in Javascript.
 
@@ -38,9 +38,9 @@ Simple enough. Let's move on!
 
 The `if` statement gives us the power to tell Javascript to execute some lines of code if a condition is met. What if we also wanted to handle what code is run when the condition **isn't** met? Here's where the `else` statement comes in. With `else` statements, we're able to handle the execution of our program when the `if` condition is skipped. Taking the previous two English written conditions, we can add an `else` statement:
 
-"If the water bottle is full, I'll drink the water. Else, I'll fill up the water bottle"
+***"If the water bottle is full, I'll drink the water. Else, I'll fill up the water bottle"***
 
-"If the weather is cold, I'll wear a sweater. Else, I'll wear a shirt"
+***"If the weather is cold, I'll wear a sweater. Else, I'll wear a shirt"***
 
 Here's what this looks like in Javascript:
 
@@ -64,9 +64,9 @@ Awesome! We now can tell Javascript what to do given that a condition evaluates 
 
 As you might imagine, `else if` looks and behaves similar to an `if` statement, but only runs if the `if` and `else if` conditions before it are not run. Here's the English version again:
 
-"If the water bottle is full, I'll drink the water. Else if the water bottle has some water, I'll drink the water and fill it up. Else, fill up the water bottle."
+***"If the water bottle is full, I'll drink the water. Else if the water bottle has some water, I'll drink the water and fill it up. Else, fill up the water bottle."***
 
-"If the weather is rainy, I'll use an umbrella. Else if the weather is cold, I'll wear a sweater. Else, I'll wear a shirt"
+***"If the weather is rainy, I'll use an umbrella. Else if the weather is cold, I'll wear a sweater. Else, I'll wear a shirt"***
 
 You can probably guess what this looks like in Javascript:
 
