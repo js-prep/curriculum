@@ -2,6 +2,7 @@
 
 - [What is scope?](#what-is-scope?)
 - [Global Scope](#global-scope)
+- [Local Scope](#local-scope)
 - [Nested Scopes](#nested-scopes)
 
 ## What is scope?
@@ -15,7 +16,7 @@ be defined in one or the other.
 
 A variable defined in the **global scope** is accessible anywhere in your code. Any variable declared outside of a function belongs to the global scope.
 
-```
+```javascript
 var outside = "hello"
 
 function someRandomFunction () {
