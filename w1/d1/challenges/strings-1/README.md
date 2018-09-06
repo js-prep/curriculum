@@ -283,6 +283,7 @@ function longestWord (sentence) {
 
 longestWord('I love coding') // --> 'coding'
 ```
+
 | i       | currentWord          | longest  |
 | ------------- |:-------------:| -----:| -----:|
 | 0      | 'I' | '' |
