@@ -1,10 +1,9 @@
 # Intro to Strings/Numbers
 
-- [Manipulating Strings 1](#Manipulating-Strings-1)
+- [Manipulating Strings 1](#ManipulatingStrings-1)
 - [Manipulating Strings 2](#Manipulating-Strings-2)
 
-# Manipulating Strings 1
-
+## Manipulating Strings 1
   Now that we've learned how to create a function and call that function, we can use them   as a way to manipulate different types of inputs in **javascript**.
 
 ### Algorithm: reverseString
@@ -170,8 +169,7 @@ We learned how to:
 * Use the `for` loop to manipulate a `string` input
 * Concatenate characters into an empty string variable
 
-# Manipulating Strings 2
-
+## Manipulating Strings 2
   We now have a better understanding of how we can use for loops to manipulate strings. In this problem however, we are asked to manipulate a string of words.
 
 ### Algorithm: longestWord
