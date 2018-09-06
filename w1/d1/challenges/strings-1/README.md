@@ -1,7 +1,7 @@
 # Intro to Strings/Numbers
 
-- [Manipulating Strings 1](#ManipulatingStrings-1)
-- [Manipulating Strings 2](#Manipulating-Strings-2)
+- [Manipulating Strings 1](#manipulating-strings-1)
+- [Manipulating Strings 2](#manipulating-strings-2)
 
 ## Manipulating Strings 1
   Now that we've learned how to create a function and call that function, we can use them   as a way to manipulate different types of inputs in **javascript**.
