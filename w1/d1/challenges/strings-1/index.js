@@ -21,6 +21,10 @@
   factorial(8)  --> 40320
   factorial(0) --> 1
   factorial(1) --> 1
+
+  * HINT: This problem is very similar to the first problem [Manipulating Strings].
+  * The only key difference is that we are manipulating a number rather than a string.
+  * Also don't forget to factor in the edge case where your input is 0. HINTHINT: use an if statement
 */
 
 /*

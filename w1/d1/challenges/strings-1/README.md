@@ -1,3 +1,8 @@
+# Intro to Strings/Numbers
+
+- [Manipulating Strings 1](#Manipulating-Strings-1)
+- [Manipulating Strings 2](#Manipulating-Strings-2)
+
 # Manipulating Strings 1
 
   Now that we've learned how to create a function and call that function, we can use them   as a way to manipulate different types of inputs in **javascript**.
@@ -164,4 +169,120 @@ We learned how to:
 * Change and use the rules within a `for` loop
 * Use the `for` loop to manipulate a `string` input
 * Concatenate characters into an empty string variable
+
+# Manipulating Strings 2
+
+  We now have a better understanding of how we can use for loops to manipulate strings. In this problem however, we are asked to manipulate a string of words.
+
+### Algorithm: longestWord
+
+1. _Manipulating Strings 2_ asks to create a function longestWord that will take a string argument and return the longest word from the string. We can assume that the input will always have a length greater than 1, so there will always be at least one word.
+
+2. We know how to get the length of a string using the `length` method. The problem here is how can we tell javascript to get the length of each word? Let's break this down a bit:
+
+  * We need to somehow identify each word from a string
+  * We need to identify the length of each word and compare them to the other words
+
+#### Identifying each word from a string
+
+Let's imagine that we are looping through a string. Let's just use the example `'I love coding'` for now. During each iteration of the loop, how can we tell if a new word has started? The answer is the _spaces_. Every word is separated by a _space_. Knowing this, we can tell javascript that everytime we encounter a space ` ` it is the end of the previous word and the start of a new word.
+
+* With this, we can go ahead and loop through our _string_ input and keep a `counter` of each letter until we reach a _space_. Then we know the word has ended, we'll save the counter we've been adding up and that'll be the length of our first word. We can repeat this process and then compare the longest words after we are done looping through the string.
+
+  * _This is one way to solve the problem but it can be a bit tedious and a bit tricky storing each length of every word using a counter because you will have to somehow correspond every word length to its word_. It would be great if we can just separate each word into a list.
+
+    * When you hear the word _list_ the first thing that should pop in your head is an `Array`. We haven't been dealing with Arrays much, but arrays are just a list of data in javascript. ie.
+    ```javascript
+    var myArray = [1, false, 'hello', 531, 'aaihoiqwho']
+    ```
+
+#### Creating an array from a string
+
+There's many ways to do this but for our purpose we'll be learning the `split` method (ref: https://www.w3schools.com/jsref/jsref_split.asp).
+
+* `split`
+1. The `split` method only works for strings
+2. It takes in a string argument
+3. The string argument tells the method which string value to look for when splitting the original string.
+4. The output for the `split` method will return a new `Array` of all the values in the original array split by the argument.
+
+Example:
+```javascript
+var myString = 'i can split the world'
+var myStringSplit = myString.split(' ')
+console.log(myStringSplit) // --> ['i', 'can'. 'split', 'the', 'world']
+```
+
+We can see from the example above, we used the `split` method on our string variable `myString`. We told it to split the string by every _space_ `' '`. A new array will be created and stored in the value `myStringSplit`. Try it out for yourself! Let's look at another example:
+
+Example 2:
+```javascript
+var anotherString = 'mississippi'
+// Can you spell mississippi without the i's?
+var mississippilessly = anotherString.split('i')
+console.log(mississippilessly) // --> ['m', 'ss', 'ss', 'pp', '']
+```
+
+Now we can use the split method to separate every word from a string to solve our problem.
+
+#### Looping through an array
+Now that we have an array of each word from our original string input we need to get the length of every word and also be able to compare it to find out if it is the largest word from our array. Just like looping through a string, our array is separated by indices and can also be looped through using a `for` loop in the same manner:
+```javascript
+var myArray = ['hello', 'world', 2, '?!?', 'I AM A STRING']
+
+for (var i = 0; i < myArray.length; i++) {
+  console.log(i, myArray[i]) // --> 0, 'hello'
+}
+```
+
+#### Using counters
+Creating a __variable__ to keep a _counter_ can be very useful in solving these types of algorithms. We can use a variable to store the current _longestWord_ while we iterate through our _array_.
+
+Example:
+```javascript
+var myArray = ['I', 'love', 'coding']
+var longest = ''
+
+for (var i = 0; i < myArray.length; i++) {
+  /* Compare each word's length with the current value of the variable longest */
+}
+```
+
+We've created a variable `longest` and assigned it to an empty string `''`. We'll compare every _word_ during our `for` loop with the current value of `longest`.
+
+Example:
+```javascript
+var myArray = ['I', 'love', 'coding']
+var longest = ''
+
+for (var i = 0; i < myArray.length; i++) {
+  var currentWord = myArray[i] // In here, we are storing the current word myArray[i] to currentWord just as a reference. This is helpful and advised just for readability and separation of concerns.
+  
+  if (currentWord.length > longest.length) {
+    // If the currentWord's length is greater than the length of our current longest word...
+    longest = currentWord
+    // then reassign our currentWord as longest
+  }
+}
+```
+
+* Make sure to return our longest word after the `for` loop has completed to complete our function `longestWord`. Your end function should look something like this:
+
+```javascript
+function longestWord (sentence) {
+  var longest = ''
+
+  for (var i = 0; i < sentence.length; i++) {
+    var currentWord = sentence[i]
+
+    if (currentWord.length > longest.length) {
+      longest = currentWord
+    }
+  }
+
+  return longest
+}
+
+longestWord('I love coding') // --> 'coding'
+```
 
