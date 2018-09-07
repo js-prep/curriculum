@@ -52,6 +52,7 @@
   2. Then, if the new string is a vowel, capitalize it
   (ie 'a' becomes 'A', 'o' becomes 'O')
 
+  ** Assume all characters in the string input will be lower cased
   ** Special characters, spaces and numbers will not be converted and still should be included in the final ouput
 
   Example:

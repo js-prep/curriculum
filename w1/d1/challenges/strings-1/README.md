@@ -2,9 +2,12 @@
 
 - [Manipulating Strings 1](#manipulating-strings-1)
 - [Manipulating Strings 2](#manipulating-strings-2)
+- [Manipulating Strings 3](#manipulating-strings-3)
 
+___________________
 ## Manipulating Strings 1
   Now that we've learned how to create a function and call that function, we can use them   as a way to manipulate different types of inputs in **javascript**.
+
 
 ### Algorithm: reverseString
 
@@ -169,8 +172,11 @@ We learned how to:
 * Use the `for` loop to manipulate a `string` input
 * Concatenate characters into an empty string variable
 
+__________________________
+
 ## Manipulating Strings 2
   We now have a better understanding of how we can use for loops to manipulate strings. In this problem however, we are asked to manipulate a string of words.
+  
 
 ### Algorithm: longestWord
 
@@ -289,3 +295,233 @@ longestWord('I love coding') // --> 'coding'
 | 0      | 'I' | '' |
 | 1      | 'love'      |   'I' |
 | 2 | 'coding'      |    'love' |
+
+______________________
+
+## Manipulating Strings 3
+
+### Algorithm: letterChanges
+Similar to the previous algorithms, we're asked to create a function that takes in a _string_ as an argument. For this problem, we need to change every alphabetical letter within the _string_ to the letter that follows it in the alphabet _(ie. a becomes b, c becomes d, z becomes a)_.
+
+#### Using an array to create a table
+Immediately, we know that we need to loop through our string to identify each letter in our string. Unforunately, there's no method in javascript that helps us identify a certain character as a letter of the alphabet. We do have a way to create a list however. Using a list of characters, we can create our own alphabet that will act as a map to solve our problem.
+
+```javascript
+var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+```
+If this approach looks long and tedious you can also simply use the code below using the `split` method. Same results.
+```javascript
+var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+```
+
+------------
+
+Now, how can we use our array of letters `alphabet` to help us translate each letter from our `string` input into the letter that comes after it?
+
+The key here, is to use _indexing_.
+We know that `alphabet[0] === 'a'`, `alphabet[1] === 'b'`, `alphabet[25] === 'z'`, _etc_.
+
+Let's look at an example for now. Imagine we have a function with the string input `'abc'`.
+
+```javascript
+function letterChanges (string) {
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+}
+
+letterChanges('abc')
+```
+
+We know that the first character from our argument will be `'a'` which is the `0th index` from `alphabet`. If we wanted the letter that follows it, we simply need the `1st index` from `alphabet`, which will be `alphabet[1]` _aka_ `alphabet[0 + 1]`.
+
+Therefore, if we have the index of our _letter_ in the alphabet, we simply need to add _1_ to the _index_ to get the index of the following _letter_.
+
+________________________
+
+#### `indexOf` method
+
+The problem now is, how do we get the index of a letter from our `alphabet`? We can use the javascript method `indexOf` _(https://www.w3schools.com/jsref/jsref_indexof_array.asp)_. 
+
+* `indexOf` can be used on a **string** or an **array**
+* It takes in a **string** input
+* It will return the **beginning** _index_ of the *string* argument that is passed in as the argument
+* If `indexOf` does **NOT** find the string argument, it will return `-1`
+
+Example:
+
+```javascript
+var myList = ['hello', 'a', 'b', 'world']
+console.log(myList.indexOf('hello')) // --> 0
+console.log(myList.indexOf('b')) // --> 2
+console.log(myList.indexOf('a')) // --> 1
+console.log(myList.indexOf('universe')) // --> -1
+```
+
+Let's tie this all together and see what we can come up with..
+
+```javascript
+function letterChanges (string) {
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+
+  for (var i = 0; i < string.length; i++) {
+    var stringIndex = alphabet.indexOf(string[i])
+    var nextLetter = alphabet[stringIndex + 1]
+  }
+}
+
+letterChanges('hello')
+```
+
+_What's going on here?_
+1. We've created an array of our `alphabet`.
+2. We use `for` loop to go through our `string` argument.
+3. We create a new _variable_ `stringIndex` and assign it to the index of the current letter in the iteration from our alphabet.
+    * so for our first iteration, when `i = 0`, `string[i] === 'h'`, when `string === 'hello'`.
+    * therefore, `alphabet.indexOf(string[i])` **OR** `alphabet.indexOf('h')` will return `8`.
+    * SO... we've assigned `stringIndex = 8` when `i = 0`(the first iteration of our loop).
+4. We create another _variable_ `nextLetter` and assign it to `alphabet[stringIndex + 1]`
+    * So when `i = 0`, `stringIndex = 8`
+    * Therefore, `alphabet[stringIndex + 1]` **OR** `alphabet[9]` is `'i'`
+
+Cool, so doing this, `nextLetter` will always represent the next letter from our alphabet, **EXCEPT** in the case where our input is `'z'`. That's because our algorithm will try to grab `alphabet[26]` which doesn't exist. This is what's know as an **edge case**; a case within the algorithm that doesn't abide by our normal solution and usually requires a special condition just for that one specific case. So, to avoid this edge case, we can simply add an `if` statement to check if the current letter is `z`, in which case we will redirect it to the index of letter `'a'`.
+
+```javascript
+function letterChanges (string) {
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+
+  for (var i = 0; i < string.length; i++) {
+    var stringIndex = alphabet.indexOf(string[i])
+    // stringIndex 25 is 'z'
+    if (stringIndex === 25) {
+      // assign nextLetter to alphabet[0] aka 'a'
+      var nextLetter = alphabet[0]
+    } else {
+      // else..if the current letter is not z, we will just follow the normal procedure
+      var nextLetter = alphabet[stringIndex + 1]
+    }
+  }
+}
+
+letterChanges('hello')
+```
+
+Great! We've now covered our edge case and we're able to identify the next letter for each character from our `string`. We're not doing anything with it yet however, so let's concatenate each letter into a separate variable for our results.
+
+```javascript
+function letterChanges (string) {
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+  var result = ''
+
+  for (var i = 0; i < string.length; i++) {
+    var stringIndex = alphabet.indexOf(string[i])
+
+    if (stringIndex === 25) {
+      var nextLetter = alphabet[0]
+    } else {
+      var nextLetter = alphabet[stringIndex + 1]
+    }
+    // Remember.. this syntax is the same as result = result + nextLetter
+    result += nextLetter
+  }
+
+  // make sure to return our result AFTER the loop has finished
+  return result
+}
+
+letterChanges('hello')
+```
+
+In the example above, we should get `'ifmmp'` from our string input `'hello'`.
+
+______________________________________
+#### More edge cases..
+
+We're not done yet! Our problem will also possibly include special characters such as ` `, `_`, `*`, `!`, which we will have to ignore. This is just another edge case and we can simply create a statement saying if we run into any **non-alphabetical** character, just ignore it.
+
+```javascript
+function letterChanges (string) {
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+  var result = ''
+
+  for (var i = 0; i < string.length; i++) {
+    var stringIndex = alphabet.indexOf(string[i])
+    var nextLetter = ''
+
+    if (stringIndex === 25) {
+      nextLetter = alphabet[0]
+    }
+
+    if (stringIndex > 0) {
+      nextLetter = alphabet[stringIndex + 1]
+    }
+
+    result += nextLetter
+  }
+
+  return result
+}
+
+letterChanges('hello')
+```
+
+We changed up our code a little bit here, because now we have two `if` statements. Rather than declaring `nextLetter` multiple times, we can declare it once, and then assign a value based on which `if` statement it hits.
+
+We know that using the `indexOf` method, if the character we're looking for does not exist (any non-alphabet letter) it will return `-1`. Therefore, we can simply state if `stringIndex > 0` then we can assume it is a letter from our `alphabet` to cover our edge case.
+
+__________________________
+
+We still have one final problem before we're finished with our problem. The problem also tells us that if our translated letter is a _vowel_, we need to capitalize it within our final result.
+
+_How can we tell Javascript if a certain letter is a vowel_?
+You probably know the answer to this by now. Just like before with our alphabet, there's unforunately no built-in method for us to tell javascript that a character is a _vowel_. So just like before, we're going to need to create another array that will act as a hash table for our `vowels`.
+
+We then check if the translated letter is included in our list of vowels, then we need to capitalize it using the `toUpperCase` method (https://www.w3schools.com/jsref/jsref_touppercase.asp).
+  * `toUpperCase` will only work on a _string_
+  * it will capitalize the `string` if it's a letter regardless if it already capitalized or not
+  * `toUpperCase` does not take any arguments and will mutate the original string and not return anything
+
+
+```javascript
+function letterChanges (string) {
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+  var vowels = ['a', 'e', 'i', 'o', 'u']
+  var result = ''
+
+  for (var i = 0; i < string.length; i++) {
+    var stringIndex = alphabet.indexOf(string[i])
+    var nextLetter = ''
+
+    if (stringIndex === 25) {
+      nextLetter = alphabet[0]
+    }
+
+    if (stringIndex > 0) {
+      nextLetter = alphabet[stringIndex + 1]
+    }
+
+    // We can use the indexOf method again here to check if this letter is in our
+    // list of vowels
+    if (vowels.indexOf(nextLetter) > 0) {
+      nextLetter.toUpperCase()
+    }
+
+    result += nextLetter
+  }
+
+  return result
+}
+
+letterChanges('hello')
+```
+
+Pay close attention to the ordering of our statements here. Remember that _javascript_ is **single-threaded**, meaning it will read line by line from top to bottom.
+* We first check if the string is `'z'` to cover our edge case
+* Then we assign `nextLetter` as the next letter of our current letter 
+* Then we check if `nextLetter` is a vowel and if it is, we capitalize it
+* Then finally, we will add that letter to our result
+
+Excellent! What have we learned from this?
+* We've learned how to use an array as a hash table
+* Using a hash table we can map certain values to manipulate our inputs
+* We've learned the `indexOf` method
+* We learned how the `toUpperCase` method
+* We learned how to deal with edge cases
