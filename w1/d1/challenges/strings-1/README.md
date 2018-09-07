@@ -290,11 +290,11 @@ function longestWord (sentence) {
 longestWord('I love coding') // --> 'coding'
 ```
 
-| i       | currentWord          | longest  |
+| i | currentWord | longest  |
 | ------------- |:-------------:| -----:| -----:|
-| 0      | 'I' | '' |
-| 1      | 'love'      |   'I' |
-| 2 | 'coding'      |    'love' |
+| 0 | 'I' | '' |
+| 1 | 'love' | 'I' |
+| 2 | 'coding'| 'love' |
 
 ______________________
 
@@ -525,3 +525,4 @@ Excellent! What have we learned from this?
 * We've learned the `indexOf` method
 * We learned how the `toUpperCase` method
 * We learned how to deal with edge cases
+______________________________
