@@ -3,6 +3,7 @@
 - [Introduction to Control Flow](#introduction-to-control-flow)
 - [What is Control Flow?](#what-is-control-flow?)
 - [`if`, `else`, and `else if`](#if-else-and-else-if)
+- [`for` Loop](#for-loop)
 
 ## Introduction to Control Flow
 
@@ -106,3 +107,63 @@ if (extremelyCold) {
   // What else is there?
 }
 ```
+
+--------------------------
+## `for` Loop
+Loops are used in javascript if you want to run a block of code repeatedly. A `for` loop will give you more control over how you will run the code over and over again by manipulating a _counter_.
+
+Let's take a look at two examples accomplishing the same task with one example using a `for` loop and the other example without the `for `loop.
+
+Example (no `for` loop)
+```javascript
+var color = 'green'
+console.log(color[0]) // 'g'
+console.log(color[1]) // 'r'
+console.log(color[2]) // 'e'
+console.log(color[3]) // 'e'
+console.log(color[4]) // 'n'
+```
+
+In the code above, we're printing every letter from our _variable_ `color` one by one. You can immediately see the problem here..the code is tedious to write and more importantly can't be scaled since it's not programatic. Imagine we had to do this for a random _input_ and we were given an input with 200 characters long.
+
+Using a `for` loop we can create the same task with less code and we can handle much larger inputs.
+
+Example (with `for` loop):
+```javascript
+var color = 'green'
+
+for (var i = 0; i < color.length; i++) {
+  console.log(color[i])
+}
+```
+
+If you run the code above, you will get the same output as the first example.
+
+#### Breaking down the `for` loop
+So what is the syntax for a `for` loop and what is happening exactly?
+
+There are essentially 3 parts to a `for` loop that are separated by the _semicolons_. You need all three rules to be present for a `for` loop to function.
+
+The first rule is the initialization of the variable which usually represents a _counter_ or _index_ (whatever you want to call it). Most people use the _variable_ `i` to represent an _index_.
+```javascript
+for (var i = 0;)
+```
+
+The second rule tells us when to stop the `for` loop. The second rule will always equate to a _true or false_ statement. While the statement is `true`, the `for` loop will keep iterating until it is `false`. In this case, we are saying that if our _variable_ `i` is less than `word.length`..then we want to stop the `for` loop.
+```javascript
+var greeting = 'hello'
+for (var i = 0; i < word.length)
+```
+
+The third rule tells us what to do with our initial _variable_ after every iteration. In this case we're telling our `for` loop to increment our variable `i` by `1` everytime we've ran our block of code inside the `for` loop.
+```javascript
+var greeting = 'hello'
+for (var i = 0; i < word.length; i++) {
+  /* do stuff here */
+}
+```
+Let's tie this all together to see what's happening.
+
+1. We've set our initial variable from our `for` loop `i` to `0`.
+2. We created our stopping point by telling our `for` loop to stop when `i` is less than `word.length` which is `5`.
+3. We increment our variable `i` by `1` everytime our `for` loop finishes its block of code once.
